@@ -1,0 +1,824 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+
+<head>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <!-- Custom styles for this template -->
+        
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="icon" href="img/lightcommands.png"> -->
+
+    <meta name="google-site-verification" content="FeKMujXqA2nHgfvElWNnXzgQWeH9BrG55erv3C2MyiA" />
+
+</head>
+
+<style type="text/css">
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    h1 {
+        font-weight: 300;
+        line-height: 1.15em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    a:link, a:visited {
+        color: #00aeff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+
+    b:link, b:visited {
+        color: #00aeff;
+        text-decoration: none;
+    }
+
+    b:hover {
+        color: #208799;
+    }
+
+    h1, h2{
+        text-align: center;
+    }
+
+    
+
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 800;
+        margin: 16px 0px 4px 0px;
+    }
+
+    .paper-title {
+        padding: 16px 0px 16px 0px;
+    }
+
+    section {
+        margin: 32px 0px 32px 0px;
+        text-align: justify;
+        clear: both;
+    }
+
+    .col-5 {
+        width: 20%;
+        float: left;
+    }
+
+    .col-4 {
+        width: 25%;
+        float: left;
+    }
+
+    .col-3 {
+        width: 33%;
+        float: left;
+    }
+
+    .col-2 {
+        width: 50%;
+        float: left;
+    }
+
+
+    .fig-center {
+        width: 80%;
+        float: center;
+    }
+
+    .col-1 {
+        width: 100%;
+        float: left;
+    }
+
+    .row, .author-row, .affil-row {
+        overflow: auto;
+    }
+
+    .author-row, .affil-row {
+        font-size: 26px;
+    }
+
+    .row {
+        margin: 16px 0px 16px 0px;
+    }
+
+    .authors {
+        font-size: 26px;
+    }
+
+    .affil-row {
+        margin-top: 16px;
+    }
+
+    .teaser {
+        max-width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .fig-caption {
+        text-align: center;
+        max-width: 90%;
+
+    }
+
+    .audio-caption {
+        text-align: center;
+        max-width: 100%;
+
+    }
+
+    .screenshot {
+        width: 80%;
+        border: 1px solid #ddd;
+    }
+
+    .screenshot-el {
+        margin-bottom: 1px;
+    }
+
+    hr {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .material-icons {
+        vertical-align: -6px;
+    }
+
+    p {
+        line-height: 1.25em;
+    }
+
+    .caption {
+        font-size: 20px;
+        /*font-style: italic;*/
+        color: #666;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    video {
+        display: block;
+        margin: auto;
+    }
+
+    figure {
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #bibtex pre {
+        font-size: 13.5px;
+        background-color: #eee;
+        padding: 16px;
+    }
+
+    .blue {
+        color: #2c82c9;
+        font-weight: bold;
+    }
+
+    .orange {
+        color: #d35400;
+        font-weight: bold;
+    }
+
+    .overlayText {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .overlayTextFullWide {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .overlayTextHalfWide {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .table {
+	width:100%;
+	border:1px solid color-form-highlight;
+    }
+    
+    .table-header {
+    	display:flex;
+    	width:100%;
+    	background:rgb(32, 126, 181);
+    	padding:(half-spacing-unit * 1.5) 0;
+    }
+    
+    .table-row {
+    	display:flex;
+    	width:100%;
+    	padding:(half-spacing-unit * 1.5) 0;
+    
+    }
+    
+    .table-data, .header__item {
+    	flex: 1 1 20%;
+    	text-align:center;
+    }
+
+    .line{
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: rgb(92, 84, 84);
+    }
+
+    .stack{
+        display: block !important;
+        width: auto;
+    }
+    
+    .header__item {
+    	text-transform:uppercase;
+    }
+
+    .paper-btn {
+        position: relative;
+        text-align: center;
+
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 8px;
+
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+
+        background-color: #48b64e;
+        color: white !important;
+        font-size: 20px;
+        width: 100px;
+        font-weight: 600;
+    }
+
+    .paper-btn-parent {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px;
+    }
+
+    .paper-btn:hover {
+        opacity: 0.85;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .boxed {
+				padding: 0.5em 2em 2em 2em;
+				background-color: #F8F8F8;
+	
+				max-width: 90%;
+				margin: 0 auto !important; 
+				float: none !important; ;
+	}
+	.boxed_mini {
+				padding: 0.5em 0.5em 0.5em 0.5em;
+				max-width: 40%;
+				background-color: #ECF9FF;
+				
+	}
+
+    .venue {
+        /*color: #B6486F;*/
+        font-size: 30px;
+
+    }
+
+    .myButton_l {
+				display:inline-block;
+				cursor:pointer;
+				font-family: Montserrat,sans-serif;
+				font-weight: bold;
+				font-size:15px;
+				letter-spacing: 0.1em;
+				padding:10px 10px;
+				text-decoration:none;
+			}
+	.myButton {
+				 background-color:#87d4f5;
+				-moz-border-radius:18px;
+				-webkit-border-radius:18px;
+				border-radius:18px;
+				display:inline-block;
+				cursor:pointer;
+				color:#ffffff;
+				font-family: Montserrat,sans-serif;
+				font-weight: bold;
+				font-size:25px;
+				letter-spacing: 0.1em;
+				padding:10px 50px;
+				text-decoration:none;
+			}
+	.myButton:hover {
+				background-color:#478fcc;
+				color:#ffffff;
+				
+			} 
+            /* Style the navigation menu */
+    .navbar {
+    /* margin: 0%;
+    height: 1%;
+    padding: 0%; */
+    margin: auto;
+    text-align: center;
+    padding-top: 0.14%;
+    min-height: 25px;
+    width: 100%;
+    background-color: rgb(0, 140, 255);
+    /*text-align: center;*/
+    overflow: auto;
+    }
+
+    /* Navigation links */
+    .navbar a {
+    float: left;
+    /*height: 90%;*/
+    vertical-align: middle;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 0.8em;
+    width: 16.6%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    text-align: center; /* If you want the text to be centered */
+    }
+
+    /* Add a background color on mouse-over */
+    .navbar a:hover {
+    background-color: rgb(0, 110, 255);
+    }
+
+    /* Style the current/active link */
+    .navbar a.active {
+    background-color:rgb(0, 120, 255);
+    }
+
+    .button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 30px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    }
+
+    .button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    }
+
+    .button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+    }
+
+
+    /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+    @media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left; /* If you want the text to be left-aligned on small screens */
+    }
+    }
+
+
+
+    .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+    .float-child1 {
+        width: 50%;
+        float: left;
+        padding: 20px;
+        border: 2px solid #fff;
+    } 
+    .float-child2 {
+        width: 50%;
+        float: left;
+        padding: 20px;
+        border: 2px solid #fff;
+    } 
+
+
+
+
+
+
+</style>
+
+<!-- End : Google Analytics Code-->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<!-- <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+      rel='stylesheet' type='text/css'> -->
+<head>
+    <title>EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras</title>
+    <meta property="og:description" content="EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="flex-row">
+    <div class="paper-title">
+        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras</strong></h1>
+    </div>
+
+</div>
+
+    
+    <!-- The navigation menu -->
+    <div class="navbar" style="height: 10px;">
+        <a class="active" href="#Overview">Overview</a>
+        <a href="#Research Team">Research Team</a>
+        <a href="#Vulnerability Causality">Vulnerability Causality</a>
+        <a href="#Affected Camera Devices">Affected Devices</a>
+        <a href="#Code">Implementation & Code</a>
+        <a href="#Q&A">Q&A</a>
+    </div>
+
+    <section id="Overview"/>
+    <h2>Overview</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            <br>
+            <strong>EM Eye</strong> investigates a new cybersecurity attack where the adversary eavesdrops on the confidential video data of cameras by parsing the unintentional electromagnetic leakage signals from camera circuits from the other side of a wall. This happens on the <strong>physical/analog layer</strong> of camera systems and thus allows attackers to steal victim's camera data even when perfect software protections (e.g., unbreakable passwords) are all in place. 
+            <br><br>
+        </p>
+    </div>
+
+	<div> 
+        <figure style="width: 100%">
+        <center><iframe width="700px" height="400px" src="https://www.youtube.com/embed/U7w2jyo62s0" frameborder="0" allowfullscreen></iframe></center>
+        </figure>
+    </div>			
+
+
+
+    <div style="margin-top: 5%;"> 
+        <figure style="width: 90%">
+        <center><img width="90%" src="./img/denoise.png"></center>
+        <div class="overlayTextFullWide">
+            <br>
+                <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 1:</strong> Eavesdropping attackers may apply signal processing techniques to further mitigate the noise in the real-time video reconstructions.
+                </font></p>
+            </div>
+       
+    </figure>
+    </div>
+
+
+     
+
+
+
+    
+
+    </section>
+
+
+
+
+    <section id="Research Team"/>
+    <h2>Research Team</h2>
+    <hr>
+    
+    <div class="flex-row">
+        <p>
+            <br>
+            The research paper of EM Eye is to appear at <a href="https://www.ndss-symposium.org/">The Network and Distributed System Security Symposium (NDSS) 2024</a>. Feel free to contact our research team to get a confidential pre-print. 
+        </p>
+    </div>
+
+
+
+
+
+    <div class="float-container">
+
+        <div class="float-child1">
+            <div class="author-row">
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="https://longyan97.github.io/">Yan Long</a> at University of Michigan</span></div>
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="./">Qinhong Jiang</a> at Zhejiang University</span></div>
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="https://cyansec.com/">Chen Yan</a> at Zhejiang University</span></div>
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="https://www.linkedin.com/in/tobias-alam-5a4057215/">Tobias Alam</a> at University of Michigan</span></div>
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="https://sites.google.com/site/xiaoyuijh/home">Xiaoyu Ji</a> at Zhejiang University</span></div>
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="https://scholar.google.com/citations?user=FCsdj0YAAAAJ&hl=en">Wenyuan Xu</a> at Zhejiang University</span></div>
+                <div class="col-1 text-center"><span style="font-size:25px"><a href="https://web.eecs.umich.edu/~kevinfu/">Kevin Fu</a> at Northeastern University</span></div>
+            </div>
+        </div>
+        
+        <div class="float-child2">
+                <figure style="width: 70%">
+                <img width="80%" src="./img/logo_all.png">
+            </figure>
+
+        </div>
+        
+      </div>
+    
+	</section>
+
+
+
+
+
+
+
+
+    <section id="Vulnerability Causality"/>
+    <h2>Vulnerability Causality</h2>
+        <hr>
+        <div class="flex-row">  
+            <p>
+                <br>
+                Cameras' imaging sensors <strong>transmit unprotected, plain video data in a completely deterministic manner</strong> to downstream processors such as GPUs and CPUs. While data encoded as bits cause alternating electromagnetic (EM) fields around the camera circuits, the data transmission cable connecting the imagers and processors act as an unintentional radio antenna that broadcast the EM waves to adversaries. EM Eye's investigation focuses on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible.
+    
+            </p>
+        </div>
+    
+    
+        <div style="margin-top: 5%;"> 
+            <figure style="width: 90%">
+            <center><img width="90%" src="./img/cause2.png"></center>
+            <div class="overlayTextFullWide">
+                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 2:</strong> The information flow of camera data leakage. 
+                    </font></p>
+                </div>
+           
+        </figure>
+        </div>
+
+        
+        <div style="margin-top: 5%;"> 
+            <figure style="width: 90%">
+            <center><img width="90%" src="./img/cause1.png"></center>
+            <div class="overlayTextFullWide">
+                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 3:</strong> (a) Each video
+                        frame is transmitted row by row and column by column. (b) The MIPI CSI-2 interface transmits image data with multiple lanes of differential data wires and clock wires, all generating EM leakage. (c) EM signals of two consecutive frames. (d) EM signals of ten consecutive rows. 
+                    </font></p>
+                </div>
+           
+        </figure>
+        </div>
+    
+    
+
+    
+    
+    
+    
+    
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="Affected Camera Devices"/>
+		<br>
+        <h2>Affected Camera Devices</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                <br>
+                Non-exhaustive tests with 12 different models of smartphone cameras, dash cams, and home cameras show that this this vulnerability widely exists in consumer-grade camera devices. The seriousness of information leakage depends on several factors of each camera device, such as the size and shielding of their transmission cables/circuits. With commercial off-of-the-shelf (COTS) equipment that costs less than $3000, attackers may be able to eavesdrop on smartphone cameras from up to 30 cm away due to the relative good EM shielding of smartphones. However, dash/home cameras are found to be eavesdropped from several meters away.     
+            </p>
+        </div>
+
+
+        <div style="margin-top: 1%;"> 
+            <figure style="width: 90%">
+            <center><img width="90%" src="./img/cases.png"></center>
+
+            <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 4:</strong> Susceptible camera devices we tested and their maximum eavesdropping distances with COTS equipment that's worth less than $3k. 
+            </font></p>
+            
+           
+        </figure>
+        </div>
+
+
+
+        <div style="margin-top: 5%;"> 
+            <figure style="width: 70%">
+            <center><img width="90%" src="./img/devices.png"></center>
+            <div class="overlayTextFullWide">
+                <br>
+                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 5:</strong> Tested devices and their maximum eavesdropping distances.
+                    </font></p>
+                </div>
+           
+        </figure>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+<section id="Code"/>
+<h2>Implementation and Code</h2>
+<hr>
+<div class="flex-row">
+    <p>
+        <br>
+        Below is a list of equipment we used for the experiments. <br>
+        <br>
+        (1) Software Defined Ratio (SDR): Ettus USRP B210, a two-channel USRP device with continuous RF coverage from 70 MHz – 6 GHz with up to 56 MHz of real-time bandwidth that costs $2100.
+        <br>
+        (2)  Low Noise Amplifier (LNA): Foresight Intelligence FSTRFAMP06 LNA, which costs $207 and offers a frequency
+        range of DC to 3.5 GHz with a gain of up to 40 dB.
+        <br>
+        (3) Directional Antenna: A common outdoor Log-periodic directional antenna (LPDA), which costs $15 and offers a
+         frequency range of 700 - 4900 MHz with a gain of up to 15 dBi.
+        <br>
+        (4) A laptop, of course. 
+        <br>
+        <br>
+
+        <strong>Stay tuned! We will soon release the code to help researchers replicate and further investigate the vulnerability. </strong>      
+    </p>
+</div>
+
+</section>
+
+
+<section id="Q&A"/>
+<h2>Frequently Asked Questions</h2>
+<hr>
+
+
+<h3>General Questions</h3>
+
+
+
+<div class="card">
+    <div id="q-name">
+        <h4>
+            
+            <button class="button-30" data-toggle="collapse" data-target="#a-name" >
+                Why is it called EM Eye? 
+            </button>
+        </h4>
+    </div>
+
+    <div id="a-name" class="collapse">
+        <div class="card-body">
+            <p> EM and Eye stand for electromagnetic and camera respectively. Essentially, this attack exploits the EM side channel leakage from camera circuits to eavesdrop on the images seen by victim's cameras </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="card">
+    <div id="q-worry">
+        <h4>
+            
+            <button class="button-30" data-toggle="collapse" data-target="#a-worry" >
+                When and how much should I worry about the threat of EM Eye? 
+            </button>
+        </h4>
+    </div>
+
+    <div id="a-name" class="collapse">
+        <div class="card-body">
+            <p> Whenever the camera is on, it starts leaking information as EM waves. This does not even require that the camera is actually storing the video. 
+                The eavesdropping distance results suggest that EM Eye may pose the most serious threats to dash cams and home cameras. Home cameras, in particular, can be eavesdropped on 
+                from the other side of a wall. Many smart home cameras are also kept on all the time to support motion detection features, which could cause additional concerns. </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div id="q-impact">
+        <h4>
+            
+            <button class="button-30" data-toggle="collapse" data-target="#a-impact" >
+                What is the broader impact of this discovered side-channel attack? 
+            </button>
+        </h4>
+    </div>
+
+    <div id="a-name" class="collapse">
+        <div class="card-body">
+            <p> Camera is just one type of sensors that transmit unprotected data. Similar vulnerabilities on other types of sensors are also observed and investigated in our ongoing works. 
+                We are systematically Characterizing the emerging threats of <strong>sensor side channels.</strong> </p>
+        </div>
+    </div>
+</div>
+ 
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+</body>
+</html>
