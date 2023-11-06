@@ -495,6 +495,14 @@
 
 </head>
 
+<div align="right"  >
+
+    <a href="#" class="myButton_l"><img src = "img/lang_us.png" width="50px"></img> English </a>  
+    <a href="index_cn.html" class="myButton_l"><img src = "img/lang_cn.png" width="50px"> </img> 中文</a>
+   
+</div>
+
+
 <body>
 <div class="flex-row">
     <div class="paper-title">
@@ -520,7 +528,7 @@
     <div class="flex-row">
         <p>
             <br>
-            <strong>EM Eye</strong> investigates a new cybersecurity attack where the adversary eavesdrops on the confidential video data of cameras by parsing the unintentional electromagnetic leakage signals from camera circuits from the other side of a wall. This happens on the <strong>physical/analog layer</strong> of camera systems and thus allows attackers to steal victim's camera data even when perfect software protections (e.g., unbreakable passwords) are all in place. 
+            <strong>EM Eye</strong> investigates a cybersecurity attack where the adversary eavesdrops on the confidential video data of cameras by parsing the unintentional electromagnetic leakage signals from camera circuits. This happens on the <strong>physical/analog layer</strong> of camera systems and thus allows attackers to steal victim's camera data even when perfect software protections (e.g., unbreakable passwords) are all in place. <strong>Check out the demo video below!</strong>
             <br><br>
         </p>
     </div>
@@ -535,12 +543,13 @@
 
     <div style="margin-top: 5%;"> 
         <figure style="width: 90%">
-        <center><img width="90%" src="./img/denoise.png"></center>
+        <center><img width="90%" src="./img/denoise.png">
         <div class="overlayTextFullWide">
             <br>
                 <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 1:</strong> Eavesdropping attackers may apply signal processing techniques to further mitigate the noise in the real-time video reconstructions.
                 </font></p>
             </div>
+        </center>
        
     </figure>
     </div>
@@ -610,32 +619,24 @@
         <div class="flex-row">  
             <p>
                 <br>
-                Cameras' imaging sensors <strong>transmit unprotected, plain video data in a completely deterministic manner</strong> to downstream processors such as GPUs and CPUs. While data encoded as bits cause alternating electromagnetic (EM) fields around the camera circuits, the data transmission cable connecting the imagers and processors act as an unintentional radio antenna that broadcast the EM waves to adversaries. EM Eye's investigation focuses on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible.
+                Cameras' imaging sensors <strong>transmit unprotected, plain video data in a completely deterministic manner</strong> to downstream processors such as GPUs and CPUs. While data encoded as bits cause alternating, <strong>image-specific electromagnetic (EM) fields</strong>  around the camera circuits, the data transmission cable connecting the imagers and processors act as an unintentional radio antenna that broadcast the EM waves to adversaries. Attackers can then receive the EM leakage using an eavesdropping antenna and reconstruct the camera outputs by analyzing the EM signals, as demonstrated below. 
+                <!-- EM Eye's investigation focused on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible. -->
     
             </p>
         </div>
     
     
-        <div style="margin-top: 5%;"> 
-            <figure style="width: 90%">
-            <center><img width="90%" src="./img/cause2.png"></center>
-            <div class="overlayTextFullWide">
-                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 2:</strong> The information flow of camera data leakage. 
-                    </font></p>
-                </div>
-           
-        </figure>
-        </div>
+
 
         
         <div style="margin-top: 5%;"> 
             <figure style="width: 90%">
-            <center><img width="90%" src="./img/cause1.png"></center>
+            <center><img width="90%" src="./img/cause1.png">
             <div class="overlayTextFullWide">
-                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 3:</strong> (a) Each video
-                        frame is transmitted row by row and column by column. (b) The MIPI CSI-2 interface transmits image data with multiple lanes of differential data wires and clock wires, all generating EM leakage. (c) EM signals of two consecutive frames. (d) EM signals of ten consecutive rows. 
+                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 2:</strong> (a) The information flow of camera data leakage. (b)  Architecture of embedded camera systems. (c) Unprotected camera videos are transmitted frame by frame, row by row, and column by column. (d) An example of leaked EM signals when transmitting a specific row. 
                     </font></p>
                 </div>
+            </center>
            
         </figure>
         </div>
@@ -671,17 +672,22 @@
         <div class="flex-row">
             <p>
                 <br>
-                Non-exhaustive tests with 12 different models of smartphone cameras, dash cams, and home cameras show that this this vulnerability widely exists in consumer-grade camera devices. The seriousness of information leakage depends on several factors of each camera device, such as the size and shielding of their transmission cables/circuits. With commercial off-of-the-shelf (COTS) equipment that costs less than $3000, attackers may be able to eavesdrop on smartphone cameras from up to 30 cm away. Attackers's eavesdropping device may <strong>disguise as power banks to receive smartphone leakage nearby</strong>.  Dash/home cameras are found to be eavesdropped on from <strong>meters away and through walls</strong> .     
+                Our non-exhaustive tests with 12 different models of smartphone cameras, dash cams, and home cameras show that this this vulnerability widely exists in commercial off-of-the-shelf (COTS) camera devices. The seriousness of information leakage depends on several factors of each camera device, such as the size and shielding of their transmission cables/circuits. 
+                <br> <br>
+                
+                <strong>Eavesdropping Attack Scenario Case Studies: </strong> With commercially-available eavesdropping equipment that costs less than $3000, attackers may be able to eavesdrop on smartphone cameras from up to 30 cm away. Attackers's eavesdropping device may <strong>disguise as power banks to receive smartphone leakage nearby</strong>.  Dash/home cameras are found to be eavesdropped on from <strong>meters away, through doors and walls</strong>.     
             </p>
         </div>
 
 
         <div style="margin-top: 1%;"> 
             <figure style="width: 90%">
-            <center><img width="90%" src="./img/cases.png"></center>
-
-            <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 4:</strong> Susceptible camera devices we tested and their maximum eavesdropping distances with COTS equipment that's worth less than $3k. 
+            <center>
+            <img width="90%" src="./img/cases.png">
+            <br><br>
+            <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 3:</strong> The susceptible camera devices we found and their maximum eavesdropping distances using eavesdropping equipment that's worth less than $3k. With closer distances (e.g., for smartphones), attackers may install hidden antennas around smartphones such as in the form of compromised power banks. With longer distances (e.g., for dash/home cameras), attackers can eavesdrop on these cameras through doors and walls.  
             </font></p>
+            </center>
             
            
         </figure>
@@ -689,17 +695,7 @@
 
 
 
-        <div style="margin-top: 5%;"> 
-            <figure style="width: 70%">
-            <center><img width="90%" src="./img/devices.png"></center>
-            <div class="overlayTextFullWide">
-                <br>
-                    <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 5:</strong> Tested devices and their maximum eavesdropping distances.
-                    </font></p>
-                </div>
-           
-        </figure>
-        </div>
+
 
     </section>
 
@@ -717,20 +713,17 @@
     <p>
         <br>
         Below is a list of equipment we used for the experiments. <br>
+        (1) Software Defined Ratio (SDR): Ettus USRP B210 USRP, ~$2100.
         <br>
-        (1) Software Defined Ratio (SDR): Ettus USRP B210, a two-channel USRP device with continuous RF coverage from 70 MHz – 6 GHz with up to 56 MHz of real-time bandwidth that costs $2100.
+        (2)  Low Noise Amplifier (LNA): Foresight Intelligence FSTRFAMP06 LNA, ~$200.
         <br>
-        (2)  Low Noise Amplifier (LNA): Foresight Intelligence FSTRFAMP06 LNA, which costs $207 and offers a frequency
-        range of DC to 3.5 GHz with a gain of up to 40 dB.
-        <br>
-        (3) Directional Antenna: A common outdoor Log-periodic directional antenna (LPDA), which costs $15 and offers a
-         frequency range of 700 - 4900 MHz with a gain of up to 15 dBi.
+        (3) Directional Antenna: A common outdoor Log-periodic directional antenna (LPDA), ~$15.
         <br>
         (4) A laptop, of course. 
         <br>
         <br>
 
-        <strong>Stay tuned! We will soon release the code to help researchers replicate and further investigate the vulnerability. </strong>      
+        <a href="TBA"><strong>To reproduce the attack: our GitHub repository</strong></a> provides the codes and instructions for reproducing and understanding the attack. We have prepared a ready-to-use software tool that can produce real-time reconstructions of the eavesdropped videos with EM signal input from the USRP device.       
     </p>
 </div>
 
@@ -777,7 +770,7 @@
         </h4>
     </div>
 
-    <div id="a-name" class="collapse">
+    <div id="a-worry" class="collapse">
         <div class="card-body">
             <p> Whenever the camera is on, it starts leaking information as EM waves. This does not even require that the camera is actually storing the video. 
                 The eavesdropping distance results suggest that EM Eye may pose the most serious threats to dash cams and home cameras. Home cameras, in particular, can be eavesdropped on 
@@ -798,10 +791,28 @@
         </h4>
     </div>
 
-    <div id="a-name" class="collapse">
+    <div id="a-impact" class="collapse">
         <div class="card-body">
             <p> Camera is just one type of sensors that transmit unprotected data. Similar vulnerabilities on other types of sensors are also observed and investigated in our ongoing works. 
-                We are systematically Characterizing the emerging threats of <strong>sensor side channels.</strong> </p>
+                We are systematically characterizing the emerging threats of <strong>sensor side channels.</strong> </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="card">
+    <div id="q-solution">
+        <h4>
+            
+            <button class="button-30" data-toggle="collapse" data-target="#a-solution" >
+                What are some possible solutions to this problem? 
+            </button>
+        </h4>
+    </div>
+
+    <div id="a-solution" class="collapse">
+        <div class="card-body">
+            <p> Ideally, cameras should have no unintentional EM emissions or use encrypted data transmission between the semiconductor sensor and downstream processors so that attackers cannot infer camera data by analyzing camera's EM leakage. In practice, we found that factors contributing to higher strengths of EM leakage includes longer transmission cables, poor EM shielding, higher operating voltages, etc. So designers can consider changing these design parameters accordingly to minimize leakage.</strong> </p>
         </div>
     </div>
 </div>
