@@ -514,16 +514,315 @@
     
     <!-- The navigation menu -->
     <div class="navbar" style="height: 10px;">
-        <a class="active" href="#Overview">Overview</a>
-        <a href="#Research Team">Research Team</a>
-        <a href="#Vulnerability Causality">Vulnerability Causality</a>
-        <a href="#Affected Camera Devices">Affected Devices</a>
-        <a href="#Code">Implementation & Code</a>
-        <a href="#Q&A">Q&A</a>
+        <a class="active" href="#Overview">总体概述</a>
+        <a href="#Research Team">研究团队</a>
+        <a href="#Vulnerability Causality">脆弱性分析</a>
+        <a href="#Affected Camera Devices">受影响设备清单</a>
+        <a href="#Code">开源工具</a>
+        <a href="#Q&A">常见问题</a>
     </div>
 
+    <section id="Overview"/>
+    <h2>总体概述</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            <br>
+
+            <strong>EM Eye（电磁眼睛）</strong>调查了一起攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃听摄像头的机密视频数据的网络安全攻击事件。由于这种情况发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以在那些在软件层面拥有保护的摄像头上（例如，无法破解的密码）窃取受害者摄像头数据。
+            <strong>请观看下面的演示视频！</strong>
+            <br><br>
+        </p>
+    </div>
+
+    <div> 
+        <figure style="width: 100%">
+        <center><iframe width="700px" height="400px" src="https://www.youtube.com/embed/U7w2jyo62s0" frameborder="0" allowfullscreen></iframe></center>
+        </figure>
+    </div>	
+
+    <div style="margin-top: 5%;"> 
+        <figure style="width: 90%">
+        <center><img width="90%" src="./img/denoise.png">
+        <div class="overlayTextFullWide">
+            <br>
+                <p id="topText" class="fig-caption"><font size="+1"><strong>图 1:</strong> 攻击者可以应用信号处理技术来进一步减轻实时视频重构中的噪声。
+                </font></p>
+            </div>
+        </center>
+       
+    </figure>
+    </div>
+
+
+
+</section>
+
+
+
+
+<section id="Research Team"/>
+<h2>研究团队</h2>
+<hr>
+
+<div class="flex-row">
+    <p>
+        <br>
+        本研究成果已经被<a href="https://www.ndss-symposium.org/">The Network and Distributed System Security Symposium (NDSS) 2024</a>录用. 如有需要，请联系我们的研究团队获取论文预印本。
+    </p>
+</div>
+
+
+
+
+
+<div class="float-container">
+
+    <div class="float-child1">
+        <div class="author-row">
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://longyan97.github.io/">龙颜</a> 美国密歇根大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://jackjiang313.github.io/">蒋沁宏</a> 浙江大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://cyansec.com/">闫琛</a> 浙江大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://www.linkedin.com/in/tobias-alam-5a4057215/">Tobias Alam</a> 美国密歇根大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://sites.google.com/site/xiaoyuijh/home">冀晓宇</a> 浙江大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://scholar.google.com/citations?user=FCsdj0YAAAAJ&hl=en">徐文渊</a> 浙江大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://web.eecs.umich.edu/~kevinfu/">Kevin Fu</a> 美国东北大学</span></div>
+        </div>
+    </div>
+    
+    <div class="float-child2">
+            <figure style="width: 70%">
+            <img width="80%" src="./img/logo_all.png">
+        </figure>
+
+    </div>
+    
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<section id="Vulnerability Causality"/>
+<h2>脆弱性分析</h2>
+    <hr>
+    <div class="flex-row">  
+        <p>
+            <br>
+            摄像头的图像传感器以完全确定性方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终恢复出摄像头拍摄的画面内容。具体过程如下图所示。
+            <!-- EM Eye's investigation focused on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible. -->
+
+        </p>
+    </div>
+
+
+
+
+    
+    <div style="margin-top: 5%;"> 
+        <figure style="width: 90%">
+        <center><img width="90%" src="./img/cause1.png">
+        <div class="overlayTextFullWide">
+                <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 2:</strong> (a) 摄像头数据泄漏的信息流。 (b) 嵌入式摄像头的结构. (c) 未受保护的摄像头数据是逐帧、逐行、逐列传输的。 (d) 在传输特定行时泄漏出来的电磁信号的示例。 
+                </font></p>
+            </div>
+        </center>
+       
+    </figure>
+    </div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="Affected Camera Devices"/>
     <br>
-    中文页面建设中......
+    <h2>受影响设备清单</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            <br>
+            我们对12种不同型号的智能手机摄像头、行车记录仪和家用摄像头进行了非详尽的测试。结果表明，本研究发现的漏洞广泛存在于现有的商用摄像头设备中。信息泄露的严重程度取决于每个相机设备的多个参数，例如，传输电缆/模拟电路的大小，摄像头是否有电磁屏蔽等。
+            <br> <br>
+
+            <strong>窃听攻击场景案例: </strong> 攻击者可以使用商用窃听装置（成本低于$3000）在距离智能手机摄像头30厘米远的地方实时窃听拍摄画面。攻击者还可以进一步将攻击装置伪装成充电宝来采集智能手机摄像头泄露的信息，并发送给远处的攻击者。此外，我们的研究发现人们发现对于行车记录仪/智能家居摄像头，攻击者可以<strong>在车门/房间之外几米的地方窃听车内/屋子内的摄像头画面</strong>。
+          
+        </p>
+    </div>
+
+
+    <div style="margin-top: 1%;"> 
+        <figure style="width: 90%">
+        <center>
+        <img width="90%" src="./img/cases.png">
+        <br><br>
+        <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 3:</strong> <strong>左图：</strong>我们发现的易受影响的摄像头设备，以及使用商用窃听装置（成本低于$3000）的最大窃听距离。<strong>右图：</strong>常见的攻击场景。在距离较近的攻击场景(例如，对于智能手机)，攻击者可能会在智能手机周围安装隐藏的天线（例如伪装成充电宝）。对距离较远的攻击场景(例如，对于行车记录仪/智能家居摄像头)，攻击者可以在车门/房间外窃听这些摄像头。 
+
+        </font></p>
+        </center>
+        
+       
+    </figure>
+    </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section id="Code"/>
+<h2>开源工具</h2>
+<hr>
+<div class="flex-row">
+<p>
+    <br>
+    下面是我们用于窃听摄像头的设备清单： <br>
+    (1) 软件定义无线电: Ettus USRP B210 USRP（$2100）。
+    <br>
+    (2) 低噪放大器: 福赛特智能 FSTRFAMP06（$200）。
+    <br>
+    (3) 定向天线: 常见的室外对数周期定向天线（$15）。
+    <br>
+    (4) 笔记本电脑。
+    <br>
+    <br>
+
+    <a href="TBA"><strong>欢迎感兴趣的研究者使用我们开源GitHub仓库复现攻击。</strong></a> 我们在GitHub仓库中提供用于复现和理解攻击的代码和说明，以及本研究披露的受影响设备的攻击参数。为了让研究者更好地复现攻击，我们还准备了一个现成的软件工具，研究者在可以使用软件定义无线电设备采集摄像头辐射的电磁信号对摄像头画面进行实时窃听。     
+</p>
+</div>
+
+</section>
+
+
+<section id="Q&A"/>
+<h2>常见问题</h2>
+<hr>
+
+
+<h3>General Questions</h3>
+
+
+
+<div class="card">
+<div id="q-name">
+    <h4>
+        
+        <button class="button-30" data-toggle="collapse" data-target="#a-name" >
+            为什么将这种攻击称作EM Eye？
+        </button>
+    </h4>
+</div>
+
+<div id="a-name" class="collapse">
+    <div class="card-body">
+        <p> EM和Eye分别代表电磁和眼睛。从本质上讲，这种攻击基于摄像头硬件电路的电磁侧道，通过摄像头泄漏的电磁信号来窃听受害者摄像头来看到画面图像的 </p>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<div class="card">
+<div id="q-worry">
+    <h4>
+        
+        <button class="button-30" data-toggle="collapse" data-target="#a-worry" >
+            我应该在什么时候以及在多大程度上担心EM Eye的威胁？ 
+        </button>
+    </h4>
+</div>
+
+<div id="a-worry" class="collapse">
+    <div class="card-body">
+        <p> 只要摄像头打开，它就开始以电磁波的形式无意泄露信息，这甚至不需要摄像机实际存储视频。关于窃听距离的实验结果表明，EM Eye可能对行车记录仪和智能家居摄像头构成最严重的威胁。尤其是家庭摄像头，攻击者可以在房间外实现窃听。据我们了解，现在许多智能家居摄像头处于24小时工作状态以支持运动检测功能，这可能会引起额外的担忧。 </p>
+    </div>
+</div>
+</div>
+
+
+
+<div class="card">
+<div id="q-impact">
+    <h4>
+        
+        <button class="button-30" data-toggle="collapse" data-target="#a-impact" >
+            本研究发现的测信道攻击更广泛的影响是什么？
+        </button>
+    </h4>
+</div>
+
+<div id="a-impact" class="collapse">
+    <div class="card-body">
+        <p> 摄像头只是传感器传输不受保护数据的的典型代表之一。我们正在进行的研究中也观察和研究了其他类型传感器上的类似漏洞。我们正在系统地描述这种新兴的<strong>传感器侧信道</strong>威胁。</p>
+    </div>
+</div>
+</div>
+
+
+<div class="card">
+<div id="q-solution">
+    <h4>
+        
+        <button class="button-30" data-toggle="collapse" data-target="#a-solution" >
+            有什么可能的措施来解决本研究发现的这种攻击？
+        </button>
+    </h4>
+</div>
+
+<div id="a-solution" class="collapse">
+    <div class="card-body">
+        <p> 理想情况下，摄像头应该不存在无意的电磁辐射，或者在传感器和下游处理器之间使用加密的数据传输。这样，攻击者就无法通过分析摄像头泄漏的电磁信号来推断摄像头拍摄的画面。实际情况中，我们发现导致摄像头电磁信号泄漏强度较高的因素包括：传输电缆较长、电磁屏蔽较差、工作电压较高等。因此，工程师们可以考虑相应地改变这些设计参数，以尽量减少电磁信号泄漏。</strong> </p>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
 
 
 </body>
