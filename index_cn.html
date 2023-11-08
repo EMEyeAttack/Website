@@ -529,7 +529,7 @@
         <p>
             <br>
 
-            <strong>EM Eye（电磁眼）</strong>研究了一种攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃取摄像头的机密视频数据的网络安全攻击。由于这种漏洞发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以绕过摄像头设备软件层面的保护（例如，无法破解的密码）窃取受害者摄像头数据。
+            <strong>EM Eye（电磁眼）</strong>研究了一种攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃取摄像头的机密视频数据的网络安全攻击。由于这种漏洞发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以绕过摄像头设备软件层面的保护（例如，无法破解的密码）窃取受害者摄像头数据。利用窃听到的视频，攻击者可以监视各种关键隐私信息，例如受害者房间里的摄像头记录到的受害者本身的各种活动等。
             <strong>请观看下面的演示视频！</strong>
             <br><br>
         </p>
@@ -540,19 +540,6 @@
         <center><iframe width="700px" height="400px" src="https://www.youtube.com/embed/U7w2jyo62s0" frameborder="0" allowfullscreen></iframe></center>
         </figure>
     </div>	
-
-    <div style="margin-top: 5%;"> 
-        <figure style="width: 90%">
-        <center><img width="90%" src="./img/denoise.png">
-        <div class="overlayTextFullWide">
-            <br>
-                <p id="topText" class="fig-caption"><font size="+1"><strong>图 1:</strong> 攻击者可以应用信号处理技术来进一步减轻重建的实时视频中的噪声。
-                </font></p>
-            </div>
-        </center>
-       
-    </figure>
-    </div>
 
 
 
@@ -614,7 +601,7 @@
     <div class="flex-row">  
         <p>
             <br>
-            摄像头的图像传感器以完全确定的方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终恢复出摄像头拍摄的画面内容。具体过程如下图所示。
+            摄像头的图像传感器以完全确定的方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终重建恢复出摄像头拍摄的画面内容。具体过程如下图所示。重建画面质量还可以通过基于深度学习的信号处理方法进一步提升。
             <!-- EM Eye's investigation focused on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible. -->
 
         </p>
@@ -628,7 +615,7 @@
         <figure style="width: 90%">
         <center><img width="90%" src="./img/cause1.png">
         <div class="overlayTextFullWide">
-                <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 2:</strong> (a) 摄像头数据泄漏的信息流。 (b) 嵌入式摄像头的结构. (c) 未受保护的摄像头数据是逐帧、逐行、逐列传输的。 (d) 在传输特定行时泄漏出来的电磁信号的示例。 
+                <p id="topText" class="fig-caption"><font size="+1"><strong>Fig. 1:</strong> (a) 摄像头数据泄漏的信息流。 (b) 嵌入式摄像头的结构. (c) 未受保护的摄像头数据是逐帧、逐行、逐列传输的。 (d) 在传输特定行时泄漏出来的电磁信号的示例。 
                 </font></p>
             </div>
         </center>
@@ -636,6 +623,19 @@
     </figure>
     </div>
 
+
+    <div style="margin-top: 5%;"> 
+        <figure style="width: 90%">
+        <center><img width="90%" src="./img/denoise.png">
+        <div class="overlayTextFullWide">
+            <br>
+                <p id="topText" class="fig-caption"><font size="+1"><strong>图 2:</strong> 攻击者可以应用信号处理技术来进一步减轻重建的实时视频中的噪声。
+                </font></p>
+            </div>
+        </center>
+       
+    </figure>
+    </div>
 
 
 
@@ -670,10 +670,16 @@
             <strong>消费电子产品：</strong> 非详尽地，我们对12种不同型号的智能手机摄像头、行车记录仪和家用摄像头进行了的测试。结果表明，本研究发现的漏洞广泛存在于现有的商用摄像头设备中。信息泄露的严重程度取决于每个相机设备的多个参数，例如，传输电缆/模拟电路的大小，摄像头是否有电磁屏蔽等。
             <br> <br>
 
-            <strong>物联网开发平台：</strong>几乎所有现存的物联网开发平台连接的摄像头都可以被EM Eye攻击。我们的实验成功窃取了<strong>Nvidia Jetson, and Asus Tinkerboard, Raspberry Pi (树莓派)</strong> 的摄像头数据。
+            <strong>物联网开发平台：</strong>几乎所有现存的物联网开发平台连接的摄像头都可以被EM Eye攻击。我们的实验成功窃取了Nvidia Jetson, and Asus Tinkerboard, <strong>Raspberry Pi (树莓派)</strong> 的摄像头数据。
             <br> <br>
 
-            <strong>窃听攻击场景案例: </strong> 攻击者可以使用商用窃听装置（成本低于$3000）在距离智能手机摄像头30厘米远的地方实时窃听拍摄画面。攻击者还可以进一步将攻击装置伪装成充电宝来采集智能手机摄像头泄露的信息，并发送给远处的攻击者。此外，我们的研究发现人们发现对于行车记录仪/智能家居/物联网开发摄像头，攻击者可以<strong>在车门/房间之外几米的地方窃听车内/屋子内的摄像头画面</strong>。
+            <strong>窃听攻击场景案例: </strong> 使用商用窃听装置,攻击者可以在距离智能手机摄像头30厘米远以及距离行车记录仪/智能家居/物联网开发摄像头数米远的地方实时窃听拍摄画面。。我们研究了以下几种可能的攻击场景：
+            <br>
+            <ul>
+                <li>手机摄像头窃听：天线和电磁信号接收器可以安装在修改过的充电宝中。这些充电宝可以会在供应链内被篡改，或者由购物中心常见的共享充电宝租赁提供。</li>
+                <li>行车记录仪偷窥：当受害者在停车时保持汽车内部的行车记录仪开启，攻击者可以利用电磁眼窃听来从附近偷窥汽车内部情况。</li>
+                <li>房间摄像头穿墙窥探：攻击者通过物联网家庭安全摄像头的电磁辐射来窥探私人住宅或办公室房间。这种安全摄像头一般会靠近房间的墙壁、窗户和门安装。这可以允许攻击者从仅几米远的地方接收摄像头的电磁辐射。</li>
+            </ul>
           
         </p>
     </div>
@@ -721,9 +727,11 @@
     <br>
     (4) 笔记本电脑。
     <br>
+    注意这些设备均可以用更便宜的设备进行代替。例如，USRP B210可以被$30的RTL-SDR代替。
+    <br>
     <br>
 
-    <a href="TBA"><strong>欢迎感兴趣的研究者使用我们开源GitHub仓库复现攻击。</strong></a> 我们在GitHub仓库中提供用于复现和理解攻击的代码和说明，以及本研究披露的受影响设备的攻击参数。为了让研究者更好地复现攻击，我们还准备了一个现成的软件工具，研究者在可以使用软件定义无线电设备采集摄像头辐射的电磁信号对摄像头画面进行实时窃听。     
+    <a href="TBA"><strong>欢迎感兴趣的研究者使用我们开源GitHub代码库复现攻击。</strong></a> 我们在GitHub仓库中提供用于复现和理解攻击的代码和说明，以及本研究披露的受影响设备的攻击参数。为了让研究者更好地复现攻击，我们还准备了一个现成的软件工具，研究者在可以使用软件定义无线电设备采集摄像头辐射的电磁信号对摄像头画面进行实时窃听。     
 </p>
 </div>
 
