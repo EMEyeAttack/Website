@@ -529,7 +529,7 @@
         <p>
             <br>
 
-            <strong>EM Eye（电磁眼睛）</strong>调查了一起攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃听摄像头的机密视频数据的网络安全攻击事件。由于这种情况发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以在那些在软件层面拥有保护的摄像头上（例如，无法破解的密码）窃取受害者摄像头数据。
+            <strong>EM Eye（电磁眼）</strong>研究了一种攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃取摄像头的机密视频数据的网络安全攻击。由于这种漏洞发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以绕过摄像头设备软件层面的保护（例如，无法破解的密码）窃取受害者摄像头数据。
             <strong>请观看下面的演示视频！</strong>
             <br><br>
         </p>
@@ -546,7 +546,7 @@
         <center><img width="90%" src="./img/denoise.png">
         <div class="overlayTextFullWide">
             <br>
-                <p id="topText" class="fig-caption"><font size="+1"><strong>图 1:</strong> 攻击者可以应用信号处理技术来进一步减轻实时视频重构中的噪声。
+                <p id="topText" class="fig-caption"><font size="+1"><strong>图 1:</strong> 攻击者可以应用信号处理技术来进一步减轻重建的实时视频中的噪声。
                 </font></p>
             </div>
         </center>
@@ -568,7 +568,7 @@
 <div class="flex-row">
     <p>
         <br>
-        本研究成果已经被<a href="https://www.ndss-symposium.org/">The Network and Distributed System Security Symposium (NDSS) 2024</a>录用. 如有需要，请联系我们的研究团队获取论文预印本。
+        本研究成果将在计算机安全顶会<a href="https://www.ndss-symposium.org/">The Network and Distributed System Security Symposium (NDSS) 2024</a>上发表。如有需要，请联系我们的研究团队获取论文预印本。
     </p>
 </div>
 
@@ -580,7 +580,7 @@
 
     <div class="float-child1">
         <div class="author-row">
-            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://longyan97.github.io/">龙颜</a> 美国密歇根大学</span></div>
+            <div class="col-1 text-center"><span style="font-size:25px"><a href="https://longyan97.github.io/">Yan Long</a> 美国密歇根大学</span></div>
             <div class="col-1 text-center"><span style="font-size:25px"><a href="https://jackjiang313.github.io/">蒋沁宏</a> 浙江大学</span></div>
             <div class="col-1 text-center"><span style="font-size:25px"><a href="https://cyansec.com/">闫琛</a> 浙江大学</span></div>
             <div class="col-1 text-center"><span style="font-size:25px"><a href="https://www.linkedin.com/in/tobias-alam-5a4057215/">Tobias Alam</a> 美国密歇根大学</span></div>
@@ -614,7 +614,7 @@
     <div class="flex-row">  
         <p>
             <br>
-            摄像头的图像传感器以完全确定性方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终恢复出摄像头拍摄的画面内容。具体过程如下图所示。
+            摄像头的图像传感器以完全确定的方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终恢复出摄像头拍摄的画面内容。具体过程如下图所示。
             <!-- EM Eye's investigation focused on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible. -->
 
         </p>
@@ -667,10 +667,13 @@
     <div class="flex-row">
         <p>
             <br>
-            我们对12种不同型号的智能手机摄像头、行车记录仪和家用摄像头进行了非详尽的测试。结果表明，本研究发现的漏洞广泛存在于现有的商用摄像头设备中。信息泄露的严重程度取决于每个相机设备的多个参数，例如，传输电缆/模拟电路的大小，摄像头是否有电磁屏蔽等。
+            <strong>消费电子产品：</strong> 非详尽地，我们对12种不同型号的智能手机摄像头、行车记录仪和家用摄像头进行了的测试。结果表明，本研究发现的漏洞广泛存在于现有的商用摄像头设备中。信息泄露的严重程度取决于每个相机设备的多个参数，例如，传输电缆/模拟电路的大小，摄像头是否有电磁屏蔽等。
             <br> <br>
 
-            <strong>窃听攻击场景案例: </strong> 攻击者可以使用商用窃听装置（成本低于$3000）在距离智能手机摄像头30厘米远的地方实时窃听拍摄画面。攻击者还可以进一步将攻击装置伪装成充电宝来采集智能手机摄像头泄露的信息，并发送给远处的攻击者。此外，我们的研究发现人们发现对于行车记录仪/智能家居摄像头，攻击者可以<strong>在车门/房间之外几米的地方窃听车内/屋子内的摄像头画面</strong>。
+            <strong>物联网开发平台：</strong>几乎所有现存的物联网开发平台连接的摄像头都可以被EM Eye攻击。我们的实验成功窃取了<strong>Nvidia Jetson, and Asus Tinkerboard, Raspberry Pi (树莓派)</strong> 的摄像头数据。
+            <br> <br>
+
+            <strong>窃听攻击场景案例: </strong> 攻击者可以使用商用窃听装置（成本低于$3000）在距离智能手机摄像头30厘米远的地方实时窃听拍摄画面。攻击者还可以进一步将攻击装置伪装成充电宝来采集智能手机摄像头泄露的信息，并发送给远处的攻击者。此外，我们的研究发现人们发现对于行车记录仪/智能家居/物联网开发摄像头，攻击者可以<strong>在车门/房间之外几米的地方窃听车内/屋子内的摄像头画面</strong>。
           
         </p>
     </div>
@@ -769,7 +772,7 @@
 
 <div id="a-worry" class="collapse">
     <div class="card-body">
-        <p> 只要摄像头打开，它就开始以电磁波的形式无意泄露信息，这甚至不需要摄像机实际存储视频。关于窃听距离的实验结果表明，EM Eye可能对行车记录仪和智能家居摄像头构成最严重的威胁。尤其是家庭摄像头，攻击者可以在房间外实现窃听。据我们了解，现在许多智能家居摄像头处于24小时工作状态以支持运动检测功能，这可能会引起额外的担忧。 </p>
+        <p> 只要摄像头打开，它就开始以电磁波的形式无意泄露信息，这甚至不需要摄像机实际存储视频。关于窃听距离的实验结果表明，EM Eye可能对行车记录仪和智能家居摄像头构成最严重的威胁。尤其是家庭摄像头，攻击者可以在房间外实现窃听。据我们了解，现在许多智能家居摄像头处于24小时工作状态以支持运动检测功能，这可能会引起额外的隐患。 </p>
     </div>
 </div>
 </div>
