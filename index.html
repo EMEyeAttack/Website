@@ -506,7 +506,7 @@
 <body>
 <div class="flex-row">
     <div class="paper-title">
-        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras</strong></h1>
+        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye: Electromagnetic Side-channel Eavesdropping on Embedded Cameras</strong></h1>
     </div>
 
 </div>
@@ -528,7 +528,7 @@
     <div class="flex-row">
         <p>
             <br>
-            <strong>EM Eye</strong> investigates a cybersecurity attack where the attackers eavesdrop on the confidential video data of cameras by parsing the unintentional electromagnetic leakage signals from camera circuits. This happens on the <strong>physical/analog layer</strong> of camera systems and thus allows attackers to steal victim's camera data even when perfect software protections (e.g., unbreakable passwords) are all in place. Exploiting the eavesdropped videos, attackers can spy on  privacy-sensitive information such as people's activities in an enclosed room  recorded by the victim's home security camera. <strong>Check out the demo video below!</strong>
+            <strong>EM Eye</strong> investigates a cybersecurity attack where the attackers eavesdrop on the confidential video data of cameras by parsing the unintentional electromagnetic leakage signals from camera circuits. This happens on the <strong>physical/analog layer</strong> of camera systems and thus allows attackers to steal victim's camera data even when perfect software protections (e.g., unbreakable passwords) are all in place. Exploiting the eavesdropped videos, attackers can spy on  privacy-sensitive information such as people's activities in an enclosed room  recorded by the victim's home security camera. <strong>Check out the demo video below.</strong>
             <br><br>
         </p>
     </div>
@@ -562,6 +562,24 @@
         </p>
     </div>
 
+
+
+    <div align="center">
+    <a href="#bibtex"  class=" myButton " data-toggle="collapse" role="button"><span class="material-icons"> insert_comment </span>
+	BibTeX Citation <i class="fa fa-quote-right" aria-hidden="true"></i></a>
+		<div id="bibtex" style="margin-top: 1.5em;" class="collapse" align="left">
+			<pre style="white-space: pre">
+
+                @inproceedings{long2024emeye,
+                    title={EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras},
+                    author={Long, Yan and Jiang, Qinhong and Yan, Chen and Alam, Tobias and Ji, Xiaoyu and Xu, Wenyuan and Fu, Kevin},
+                    booktitle={Network and Distributed Systems Security (NDSS) Symposium},
+                    year={2024}
+                  }
+                        
+	</pre>					
+	</div>	
+    </div>	
 
 
 
@@ -605,7 +623,7 @@
             <p>
                 <br>
                 Cameras' imaging sensors <strong>transmit unprotected, plain video data in a completely deterministic manner</strong> to downstream processors such as GPUs and CPUs. While data encoded as bits cause alternating, <strong>image-specific electromagnetic (EM) fields</strong>  around the camera circuits, the data transmission cable connecting the imagers and processors act as an unintentional radio antenna that broadcast the EM waves to adversaries. Attackers can then receive the EM leakage using an eavesdropping antenna and reconstruct the camera outputs by analyzing the EM signals, as demonstrated below. The quality of the reconstructed images can be further improved using deep learning-based signal processing methods. 
-                <!-- EM Eye's investigation focused on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible. -->
+                EM Eye's causality analysis focused on the example of the trending embedded camera data transmission interface: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>.  Other similar interfaces are also be susceptible.
     
             </p>
         </div>
@@ -745,7 +763,7 @@
         Note that the equipment can be replaced with cheaper counterparts. For example, USRP B210 can be replaced with RTL-SDR that costs ~$30. 
         <br>
         <br>
-        <a href="TBA"><strong>To reproduce the attack: our GitHub repository</strong></a> provides the codes and instructions for reproducing and understanding the attack. We have prepared a ready-to-use software tool that can produce real-time reconstructions of the eavesdropped videos with EM signal input from the USRP device.       
+        <a href="https://github.com/longyan97/EMEye_Tutorial"><strong>To reproduce the attack: our GitHub repository</strong></a> provides the codes and instructions for reproducing and understanding the attack. We have prepared a ready-to-use software tool that can produce real-time reconstructions of the eavesdropped videos with EM signal input from the USRP device.       
     </p>
 </div>
 

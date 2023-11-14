@@ -489,7 +489,7 @@
 <!-- <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
       rel='stylesheet' type='text/css'> -->
 <head>
-    <title>EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras</title>
+    <title>EM Eye：基于电磁测信道泄露的嵌入式相机窃听</title>
     <meta property="og:description" content="EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
@@ -506,7 +506,7 @@
 <body>
 <div class="flex-row">
     <div class="paper-title">
-        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras</strong></h1>
+        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye：基于电磁测信道泄露的嵌入式相机窃听</strong></h1>
     </div>
 
 </div>
@@ -530,7 +530,7 @@
             <br>
 
             <strong>EM Eye（电磁眼）</strong>研究了一种攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃取摄像头的机密视频数据的网络安全攻击。由于这种漏洞发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以绕过摄像头设备软件层面的保护（例如，无法破解的密码）窃取受害者摄像头数据。利用窃听到的视频，攻击者可以监视各种关键隐私信息，例如受害者房间里的摄像头记录到的受害者本身的各种活动等。
-            <strong>请观看下面的演示视频！</strong>
+            <strong>请观看下面的演示视频。</strong>
             <br><br>
         </p>
     </div>
@@ -540,6 +540,8 @@
         <center><iframe width="700px" height="400px" src="https://www.youtube.com/embed/U7w2jyo62s0" frameborder="0" allowfullscreen></iframe></center>
         </figure>
     </div>	
+
+
 
 
 
@@ -601,8 +603,7 @@
     <div class="flex-row">  
         <p>
             <br>
-            摄像头的图像传感器以完全确定的方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终重建恢复出摄像头拍摄的画面内容。具体过程如下图所示。重建画面质量还可以通过基于深度学习的信号处理方法进一步提升。
-            <!-- EM Eye's investigation focused on a trending data transmission interface standard for embedded cameras: <a href="https://www.mipi.org/specifications/csi-2"><strong>MIPI CSI-2</strong></a>. Other interfaces could also be susceptible. -->
+            摄像头的图像传感器以完全确定的方式向下游处理器（如GPU和CPU）<strong>传输未受保护的原始图像数据</strong>。当图像数据以比特编码方式传输的时候，0-1比特的交替翻转引起摄像头电路周围与<strong>图像内容相关的电磁信号</strong>；并且，连接图像传感器和处理器的数据传输电缆无意地成为无线电天线将这些电磁信号发送给攻击者。攻击者可以使用无线电天线接收摄像头泄漏出来的电磁信号并使用算法进行解析，最终重建恢复出摄像头拍摄的画面内容。具体过程如下图所示。重建画面质量还可以通过基于深度学习的信号处理方法进一步提升。EM Eye 的分析侧重于热门嵌入式摄像头数据传输接口的例子：MIPI CSI-2。其他类似的接口也可能受到影响。
 
         </p>
     </div>
@@ -731,7 +732,7 @@
     <br>
     <br>
 
-    <a href="TBA"><strong>欢迎感兴趣的研究者使用我们开源GitHub代码库复现攻击。</strong></a> 我们在GitHub仓库中提供用于复现和理解攻击的代码和说明，以及本研究披露的受影响设备的攻击参数。为了让研究者更好地复现攻击，我们还准备了一个现成的软件工具，研究者在可以使用软件定义无线电设备采集摄像头辐射的电磁信号对摄像头画面进行实时窃听。     
+    <a href="https://github.com/longyan97/EMEye_Tutorial"><strong>欢迎感兴趣的研究者使用我们开源GitHub代码库复现攻击。</strong></a> 我们在GitHub仓库中提供用于复现和理解攻击的代码和说明，以及本研究披露的受影响设备的攻击参数。为了让研究者更好地复现攻击，我们还准备了一个现成的软件工具，研究者在可以使用软件定义无线电设备采集摄像头辐射的电磁信号对摄像头画面进行实时窃听。     
 </p>
 </div>
 
