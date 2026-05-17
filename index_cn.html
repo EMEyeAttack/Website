@@ -3,6 +3,17 @@
 
 
 <head>
+    <meta charset="UTF-8">
+    <title>EM Eye | 嵌入式相机中的传感器电磁（EM）侧信道泄漏</title>
+    <meta name="description" content="EM Eye（NDSS 2024）首次系统研究了嵌入式摄像头和图像传感器数据传输中的内容级电磁侧信道窃听问题，为传感器电磁（EM）侧信道泄漏研究方向奠定了基础。">
+    <meta property="og:title" content="EM Eye：嵌入式相机中的传感器电磁（EM）侧信道泄漏">
+    <meta property="og:description" content="EM Eye（NDSS 2024）首次系统研究了嵌入式摄像头和图像传感器数据传输中的内容级电磁侧信道窃听问题。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emeyeattack.github.io/Website/index_cn.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EM Eye：传感器电磁（EM）侧信道泄漏">
+    <meta name="twitter:description" content="EM Eye（NDSS 2024）首次系统研究了嵌入式摄像头和图像传感器数据传输中的内容级电磁侧信道窃听问题。">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <script src="http://www.google.com/jsapi" type="text/javascript"></script>
     <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 
@@ -387,7 +398,7 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 0.8em;
-    width: 16.6%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    width: 14.28%;
     text-align: center; /* If you want the text to be centered */
     }
 
@@ -488,13 +499,6 @@
 <script type="text/javascript" src="../js/hidebib.js"></script>
 <!-- <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
       rel='stylesheet' type='text/css'> -->
-<head>
-    <title>EM Eye：基于电磁测信道泄露的嵌入式相机窃听</title>
-    <meta property="og:description" content="EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-
-</head>
-
 <div align="right"  >
 
     <a href="index.html" class="myButton_l"><img src = "img/lang.png" width="30px"></img> English </a>  
@@ -506,7 +510,7 @@
 <body>
 <div class="flex-row">
     <div class="paper-title">
-        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye：基于电磁测信道泄露的嵌入式相机窃听</strong></h1>
+        <h1 style="color:rgb(71, 132, 216)"><strong>EM Eye：嵌入式相机中的电磁侧信道窃听</strong></h1>
     </div>
 
 </div>
@@ -519,6 +523,7 @@
         <a href="#Vulnerability Causality">脆弱性分析</a>
         <a href="#Affected Camera Devices">受影响设备清单</a>
         <a href="#Code">开源工具</a>
+        <a href="#research-lineage">研究脉络</a>
         <a href="#Q&A">常见问题</a>
     </div>
 
@@ -531,6 +536,12 @@
 
             <strong>EM Eye（电磁眼）</strong>研究了一种攻击者通过解析摄像头电路产生的意外电磁泄漏信号来窃取摄像头的机密视频数据的网络安全攻击。由于这种漏洞发生在摄像头系统的<strong>物理/模拟层</strong>，攻击者可以绕过摄像头设备软件层面的保护（例如，无法破解的密码）窃取受害者摄像头数据。利用窃听到的视频，攻击者可以监视各种关键隐私信息，例如受害者房间里的摄像头记录到的受害者本身的各种活动等。
             <strong><a href="https://www.bilibili.com/video/BV1QG411S7qr/?vd_source=c7287a13c3d9c532ba746849813031aa">请观看下面的演示视频。</a></strong>
+            <br><br>
+        </p>
+    </div>
+    <div class="flex-row">
+        <p>
+            <strong>研究脉络。</strong> EM Eye 首次系统研究了嵌入式摄像头和图像传感器数据传输中的内容级电磁侧信道窃听问题。该工作展示了确定性、未加保护的传感器数据传输可能产生可重建的电磁泄漏，从而为传感器电磁（EM）侧信道泄漏这一更广泛的研究方向奠定了基础。后续及密切相关工作已经将类似问题扩展到虹膜、掌纹、掌静脉和其他生物特征传感器。
             <br><br>
         </p>
     </div>
@@ -643,8 +654,14 @@
 <div class="flex-row">
     <p>
         <br>
-        本研究将在计算机安全顶会<a href="https://www.ndss-symposium.org/">The Network and Distributed System Security Symposium (NDSS) 2024</a>上发表。如有需要，请联系我们的研究团队获取论文预印本。
+        EM Eye 研究论文已发表于 <a href="https://www.ndss-symposium.org/">Network and Distributed System Security Symposium (NDSS) 2024</a>。论文、官方页面和开源复现资源如下。
     </p>
+</div>
+
+<div align="center">
+    <a href="https://www.ndss-symposium.org/ndss-paper/em-eye-characterizing-electromagnetic-side-channel-eavesdropping-on-embedded-cameras/" class="myButton">NDSS 页面</a>
+    <a href="https://www.ndss-symposium.org/wp-content/uploads/2024-552-paper.pdf" class="myButton">论文 PDF</a>
+    <a href="https://github.com/longyan97/EMEye_Tutorial" class="myButton">代码与教程</a>
 </div>
 
 
@@ -681,6 +698,22 @@
 
 
 
+
+
+<section id="research-lineage">
+<h2>研究脉络：传感器电磁（EM）侧信道泄漏</h2>
+<hr>
+<div class="flex-row">
+    <p>
+        <br>
+        <strong>EM Eye</strong> 首次系统研究了嵌入式摄像头和图像传感器数据传输中的内容级电磁侧信道窃听问题。通过展示确定性、未加保护的传感器数据传输可能产生可重建的电磁泄漏，EM Eye 为传感器电磁（EM）侧信道泄漏这一更广泛的研究方向奠定了基础。
+        <br><br>
+        我们维护一个持续更新的英文研究脉络页面，用于整理后续及密切相关工作，并尽量清晰、准确地说明该方向如何扩展到虹膜、掌纹、掌静脉和其他生物特征传感器。
+        <br><br>
+        <a href="sensor-em-side-channel-lineage.html">查看完整研究脉络页面</a>。
+    </p>
+</div>
+</section>
 
 
 <section id="Vulnerability Causality"/>
@@ -754,7 +787,7 @@
     <div class="flex-row">
         <p>
             <br>
-            <strong>消费电子产品：</strong> 非详尽地，我们对12种不同型号的智能手机摄像头、行车记录仪和家用摄像头进行了的测试。结果表明，本研究发现的漏洞广泛存在于现有的商用摄像头设备中。信息泄露的严重程度取决于每个相机设备的多个参数，例如，传输电缆/模拟电路的大小，摄像头是否有电磁屏蔽等。
+            <strong>消费电子产品：</strong> 非详尽地，我们对12种不同型号的智能手机摄像头、行车记录仪和家用摄像头进行了测试。结果表明，本研究发现的漏洞广泛存在于现有的商用摄像头设备中。信息泄漏的严重程度取决于每个相机设备的多个参数，例如，传输电缆/模拟电路的大小，摄像头是否有电磁屏蔽等。
             <br> <br>
 
             <strong>物联网开发平台：</strong>几乎所有现存的物联网开发平台连接的摄像头都可以被EM Eye攻击。我们的实验成功窃取了Nvidia Jetson, and Asus Tinkerboard, <strong>Raspberry Pi (树莓派)</strong> 的摄像头数据。
@@ -830,7 +863,55 @@
 <hr>
 
 
-<h3>General Questions</h3>
+<h3>一般问题</h3>
+
+<div class="card">
+<div id="q-invent">
+    <h4>
+        <button class="button-30" data-toggle="collapse" data-target="#a-invent" >
+            EM Eye 是否发明了所有电磁侧信道攻击？
+        </button>
+    </h4>
+</div>
+
+<div id="a-invent" class="collapse">
+    <div class="card-body">
+        <p>不是。电磁侧信道攻击已有很长的研究历史，包括针对显示器、计算过程和其他硬件系统的早期工作。EM Eye 的贡献更具体：它首次系统研究了嵌入式摄像头和图像传感器数据传输中的内容级电磁侧信道窃听问题。</p>
+    </div>
+</div>
+</div>
+
+<div class="card">
+<div id="q-foundational">
+    <h4>
+        <button class="button-30" data-toggle="collapse" data-target="#a-foundational" >
+            为什么说 EM Eye 对传感器电磁侧信道泄漏具有基础意义？
+        </button>
+    </h4>
+</div>
+
+<div id="a-foundational" class="collapse">
+    <div class="card-body">
+        <p>EM Eye 展示了确定性、未加保护的传感器数据传输会产生与图像内容相关的电磁辐射，从而使攻击者有机会重建摄像头输出。这种根因视角为研究其他传感系统中的电磁泄漏提供了可复用的分析框架。</p>
+    </div>
+</div>
+</div>
+
+<div class="card">
+<div id="q-related-work">
+    <h4>
+        <button class="button-30" data-toggle="collapse" data-target="#a-related-work" >
+            EM Eye 与后续虹膜和掌部电磁泄漏论文有什么关系？
+        </button>
+    </h4>
+</div>
+
+<div id="a-related-work" class="collapse">
+    <div class="card-body">
+        <p>后续及密切相关工作将更广泛的传感器电磁侧信道泄漏问题扩展到了近红外虹膜传感器、掌纹传感器和掌静脉传感器等不同模态。这些工作研究的传感器和系统不同，但都关注传感器数据传输可能产生内容相关电磁辐射这一问题。</p>
+    </div>
+</div>
+</div>
 
 
 
@@ -846,7 +927,7 @@
 
 <div id="a-name" class="collapse">
     <div class="card-body">
-        <p> EM和Eye分别代表电磁和眼睛。从本质上讲，这种攻击基于摄像头硬件电路的电磁侧道，通过摄像头泄漏的电磁信号来窃听受害者摄像头来看到画面图像的 </p>
+        <p> EM 和 Eye 分别代表电磁和眼睛。从本质上讲，这种攻击基于摄像头硬件电路的电磁侧信道，通过摄像头泄漏的电磁信号来窃听受害者摄像头看到的画面图像。</p>
     </div>
 </div>
 </div>
@@ -867,7 +948,7 @@
 
 <div id="a-worry" class="collapse">
     <div class="card-body">
-        <p> 只要摄像头打开，它就开始以电磁波的形式无意泄露信息，这甚至不需要摄像机实际存储视频。关于窃听距离的实验结果表明，EM Eye可能对行车记录仪和智能家居摄像头构成最严重的威胁。尤其是家庭摄像头，攻击者可以在房间外实现窃听。据我们了解，现在许多智能家居摄像头处于24小时工作状态以支持运动检测功能，这可能会引起额外的隐患。 </p>
+        <p> 只要摄像头打开，它就开始以电磁波的形式无意泄漏信息，这甚至不需要摄像机实际存储视频。关于窃听距离的实验结果表明，EM Eye可能对行车记录仪和智能家居摄像头构成最严重的威胁。尤其是家庭摄像头，攻击者可以在房间外实现窃听。据我们了解，现在许多智能家居摄像头处于24小时工作状态以支持运动检测功能，这可能会引起额外的隐患。 </p>
     </div>
 </div>
 </div>
@@ -879,14 +960,14 @@
     <h4>
         
         <button class="button-30" data-toggle="collapse" data-target="#a-impact" >
-            本研究发现的测信道攻击更广泛的影响是什么？
+            本研究发现的侧信道攻击更广泛的影响是什么？
         </button>
     </h4>
 </div>
 
 <div id="a-impact" class="collapse">
     <div class="card-body">
-        <p> 摄像头只是传感器传输不受保护数据的的典型代表之一。我们正在进行的研究中也观察和研究了其他类型传感器上的类似漏洞。我们正在系统地描述这种新兴的<strong>传感器侧信道</strong>威胁。</p>
+        <p> 摄像头只是传感器传输不受保护数据的典型代表之一。我们正在进行的研究中也观察和研究了其他类型传感器上的类似漏洞。我们正在系统地描述这种新兴的<strong>传感器侧信道</strong>威胁。</p>
     </div>
 </div>
 </div>

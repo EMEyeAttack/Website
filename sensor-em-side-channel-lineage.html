@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research Lineage: Sensor Electromagnetic (EM) Side-Channel Leakage</title>
+    <meta name="description" content="A living bibliography of follow-up and closely related work on sensor electromagnetic (EM) side-channel leakage, from EM Eye to later iris, palmprint, and palmvein sensing studies.">
+    <style>
+        body {
+            font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        h1 {
+            color: rgb(71, 132, 216);
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 1.15em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 800;
+            margin: 32px 0px 4px 0px;
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 24px;
+        }
+
+        a:link, a:visited {
+            color: #00aeff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #208799;
+        }
+
+        p, li {
+            line-height: 1.25em;
+        }
+
+        section {
+            margin: 32px 0px;
+            text-align: justify;
+            clear: both;
+        }
+
+        hr {
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 0 0 16px 0;
+        }
+
+        .navbar {
+            margin: auto;
+            text-align: center;
+            min-height: 25px;
+            width: 100%;
+            background-color: rgb(0, 140, 255);
+            overflow: auto;
+        }
+
+        .navbar a {
+            float: left;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 0.8em;
+            width: 25%;
+            text-align: center;
+            padding: 3px 0;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(0, 110, 255);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+            font-size: 18px;
+        }
+
+        th {
+            background: rgb(32, 126, 181);
+            color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        pre {
+            font-size: 13.5px;
+            background-color: #eee;
+            padding: 16px;
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 700px) {
+            body {
+                width: 92%;
+                font-size: 18px;
+            }
+
+            .navbar a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding-left: 8px;
+            }
+
+            table {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Research Lineage: Sensor Electromagnetic (EM) Side-Channel Leakage</h1>
+
+    <div class="navbar">
+        <a href="index.html">EM Eye Home</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#citation">Citation</a>
+        <a href="#faq">FAQ</a>
+    </div>
+
+    <section>
+        <p>This page maintains a living bibliography of follow-up and closely related work on <strong>sensor electromagnetic (EM) side-channel leakage</strong>. The goal is to give proper credit to all researchers while documenting how the research area has developed.</p>
+
+        <p><strong>EM Eye</strong>, published at NDSS 2024, pioneered the systematic study of content-level electromagnetic side-channel eavesdropping on embedded camera and image-sensor data transmission. By showing that deterministic, unprotected sensor data transmission can induce reconstructable EM leakage, EM Eye laid groundwork for the broader research line on sensor EM side-channel leakage.</p>
+
+        <p>This page does not claim that EM Eye invented all EM side-channel research. EM side-channel analysis has a long history. Instead, this page documents the more specific lineage from embedded camera and image-sensor data-transmission leakage to later studies of EM leakage from iris, palmprint, palmvein, and other sensors.</p>
+    </section>
+
+    <section id="timeline">
+        <h2>Timeline of Follow-up and Closely Related Work</h2>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Work</th>
+                    <th>Sensor modality</th>
+                    <th>Relationship to EM Eye</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023</td>
+                    <td><a href="https://doi.org/10.1145/3576915.3623153">FPLogger: Recovering Fingerprints from In-Display Fingerprint Sensors via Electromagnetic Side Channel</a></td>
+                    <td>In-display fingerprint sensors</td>
+                    <td>Closely related predecessor in biometric EM side-channel leakage. It is listed to give proper credit and to distinguish the broader biometric EM leakage area from the embedded-camera branch pioneered by EM Eye.</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td><a href="https://www.ndss-symposium.org/ndss-paper/em-eye-characterizing-electromagnetic-side-channel-eavesdropping-on-embedded-cameras/">EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras</a></td>
+                    <td>Embedded RGB cameras and image sensors</td>
+                    <td>Foundational work for content-level EM eavesdropping on embedded camera and image-sensor data transmission.</td>
+                </tr>
+                <tr>
+                    <td>2025</td>
+                    <td><a href="https://www.ndss-symposium.org/wp-content/uploads/2025-200-paper.pdf">EMIRIS: Eavesdropping on Iris Information via Electromagnetic Side Channel</a></td>
+                    <td>Near-infrared iris sensors</td>
+                    <td>Follow-up and related work extending EM reconstruction to iris-recognition sensors.</td>
+                </tr>
+                <tr>
+                    <td>2025/2026</td>
+                    <td><a href="https://arxiv.org/abs/2510.07533">EMPalm: Exfiltrating Palm Biometric Data via Electromagnetic Side-Channels</a></td>
+                    <td>Palmprint and palmvein sensors</td>
+                    <td>Follow-up and related work extending sensor EM leakage to palm biometric systems.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="citation">
+        <h2>How to Cite EM Eye</h2>
+        <hr>
+        <p>Please cite the NDSS 2024 paper when using EM Eye, discussing content-level EM eavesdropping on embedded camera and image-sensor data transmission, or referencing this research lineage.</p>
+        <pre>@inproceedings{long2024emeye,
+  title = {EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras},
+  author = {Long, Yan and Jiang, Qinhong and Yan, Chen and Alam, Tobias and Ji, Xiaoyu and Xu, Wenyuan and Fu, Kevin},
+  booktitle = {Proceedings of the Network and Distributed System Security Symposium (NDSS)},
+  year = {2024},
+  url = {https://www.ndss-symposium.org/ndss-paper/em-eye-characterizing-electromagnetic-side-channel-eavesdropping-on-embedded-cameras/}
+}</pre>
+    </section>
+
+    <section>
+        <h2>BibTeX Entries</h2>
+        <hr>
+        <p>A machine-readable bibliography is also available as <a href="followup_works.bib">followup_works.bib</a>.</p>
+        <pre>@inproceedings{long2024emeye,
+  title = {EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras},
+  author = {Long, Yan and Jiang, Qinhong and Yan, Chen and Alam, Tobias and Ji, Xiaoyu and Xu, Wenyuan and Fu, Kevin},
+  booktitle = {Proceedings of the Network and Distributed System Security Symposium (NDSS)},
+  year = {2024},
+  url = {https://www.ndss-symposium.org/ndss-paper/em-eye-characterizing-electromagnetic-side-channel-eavesdropping-on-embedded-cameras/}
+}
+
+@inproceedings{ni2023fplogger,
+  title = {Recovering Fingerprints from In-Display Fingerprint Sensors via Electromagnetic Side Channel},
+  author = {Ni, Tao and Zhang, Xiaokuan and Zhao, Qingchuan},
+  booktitle = {Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  year = {2023},
+  doi = {10.1145/3576915.3623153},
+  url = {https://doi.org/10.1145/3576915.3623153}
+}
+
+@inproceedings{li2025emiris,
+  title = {EMIRIS: Eavesdropping on Iris Information via Electromagnetic Side Channel},
+  author = {Li, Wenhao and Wang, Jiahao and Zhang, Guoming and Yang, Yanni and Spolaor, Riccardo and Cheng, Xiuzhen and Hu, Pengfei},
+  booktitle = {Proceedings of the Network and Distributed System Security Symposium (NDSS)},
+  year = {2025},
+  url = {https://www.ndss-symposium.org/wp-content/uploads/2025-200-paper.pdf}
+}
+
+@misc{xu2025empalm,
+  title = {EMPalm: Exfiltrating Palm Biometric Data via Electromagnetic Side-Channels},
+  author = {Xu, Haowen and Zhao, Tianya and Wang, Xuyu and Ma, Lei and Dai, Jun and Wyglinski, Alexander and Sun, Xiaoyan},
+  year = {2025},
+  eprint = {2510.07533},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CR},
+  url = {https://arxiv.org/abs/2510.07533}
+}</pre>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <hr>
+
+        <h3>Did EM Eye invent all electromagnetic side-channel attacks?</h3>
+        <p>No. Electromagnetic side-channel attacks have a long history, including earlier work on displays, computation, cryptographic devices, and other hardware systems. EM Eye's contribution is more specific: it pioneered the systematic study of content-level EM eavesdropping on embedded camera and image-sensor data transmission.</p>
+
+        <h3>Why is EM Eye considered foundational for sensor EM side-channel leakage?</h3>
+        <p>EM Eye showed that deterministic, unprotected sensor data transmission can create image-dependent electromagnetic emissions that allow reconstruction of camera outputs. This root-cause view provided a reusable framework for studying EM leakage from other sensing systems whose data paths may also emit content-dependent signals.</p>
+
+        <h3>How is EM Eye related to later iris and palm EM leakage papers?</h3>
+        <p>Later work has extended the broader sensor EM side-channel leakage problem to other sensing modalities, including near-infrared iris sensors, palmprint sensors, and palmvein sensors. These works investigate different sensors and systems, while sharing the broader concern that sensor data transmission can create content-dependent EM emissions.</p>
+
+        <h3>Why include a closely related predecessor?</h3>
+        <p>The lineage page includes FPLogger because it is a closely related predecessor in biometric EM side-channel leakage. Including adjacent work helps avoid overstating EM Eye's claim while making clear that EM Eye is foundational for the embedded-camera and image-sensor data-transmission branch.</p>
+    </section>
+
+    <section>
+        <h2>Project Links</h2>
+        <hr>
+        <ul>
+            <li><a href="https://emeyeattack.github.io/Website/">Project website</a></li>
+            <li><a href="https://www.ndss-symposium.org/ndss-paper/em-eye-characterizing-electromagnetic-side-channel-eavesdropping-on-embedded-cameras/">Official NDSS 2024 page</a></li>
+            <li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-552-paper.pdf">Official paper PDF</a></li>
+            <li><a href="https://github.com/longyan97/EMEye_Tutorial">Code and tutorial</a></li>
+            <li><a href="sensor-em-side-channel-lineage.md">Markdown version of this page</a></li>
+        </ul>
+        <p><em>Last updated: 2026-05-17.</em></p>
+    </section>
+</body>
+</html>

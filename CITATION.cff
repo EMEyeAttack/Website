@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use EM Eye or this website, please cite the NDSS 2024 paper."
+title: "EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras"
+authors:
+  - family-names: Long
+    given-names: Yan
+  - family-names: Jiang
+    given-names: Qinhong
+  - family-names: Yan
+    given-names: Chen
+  - family-names: Alam
+    given-names: Tobias
+  - family-names: Ji
+    given-names: Xiaoyu
+  - family-names: Xu
+    given-names: Wenyuan
+  - family-names: Fu
+    given-names: Kevin
+url: "https://emeyeattack.github.io/Website/"
+repository-code: "https://github.com/longyan97/EMEye_Tutorial"
+preferred-citation:
+  type: conference-paper
+  title: "EM Eye: Characterizing Electromagnetic Side-channel Eavesdropping on Embedded Cameras"
+  authors:
+    - family-names: Long
+      given-names: Yan
+    - family-names: Jiang
+      given-names: Qinhong
+    - family-names: Yan
+      given-names: Chen
+    - family-names: Alam
+      given-names: Tobias
+    - family-names: Ji
+      given-names: Xiaoyu
+    - family-names: Xu
+      given-names: Wenyuan
+    - family-names: Fu
+      given-names: Kevin
+  collection-title: "Proceedings of the Network and Distributed System Security Symposium (NDSS)"
+  year: 2024
+  url: "https://www.ndss-symposium.org/ndss-paper/em-eye-characterizing-electromagnetic-side-channel-eavesdropping-on-embedded-cameras/"
